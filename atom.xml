@@ -3,11 +3,11 @@
   <title>Favor‘s Blog</title>
   <icon>https://www.gravatar.com/avatar/1a5d4daeb5d0d142c2272449325e698a</icon>
   <subtitle>The Quieter You Become, The More You Are Able To Hear</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://favor1412.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://favor1412.github.io/"/>
   <updated>2020-12-24T19:19:38.329Z</updated>
-  <id>http://example.com/</id>
+  <id>https://favor1412.github.io/</id>
   
   <author>
     <name>Favor Chen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>铝、镁、锌及其合金铸件体积型缺陷的面孔隙率评估</title>
-    <link href="http://example.com/2020/12/23/lu-mei-xin-ji-qi-he-jin-zhu-jian-ti-ji-xing-que-xian-de-mian-kong-xi-lu-ping-gu/"/>
-    <id>http://example.com/2020/12/23/lu-mei-xin-ji-qi-he-jin-zhu-jian-ti-ji-xing-que-xian-de-mian-kong-xi-lu-ping-gu/</id>
+    <link href="https://favor1412.github.io/2020/12/23/lu-mei-xin-ji-qi-he-jin-zhu-jian-ti-ji-xing-que-xian-de-mian-kong-xi-lu-ping-gu/"/>
+    <id>https://favor1412.github.io/2020/12/23/lu-mei-xin-ji-qi-he-jin-zhu-jian-ti-ji-xing-que-xian-de-mian-kong-xi-lu-ping-gu/</id>
     <published>2020-12-23T02:27:34.000Z</published>
     <updated>2020-12-24T19:19:38.329Z</updated>
     
@@ -34,14 +34,14 @@
     
     
     
-    <category term="Test" scheme="http://example.com/categories/Test/"/>
+    <category term="Test" scheme="https://favor1412.github.io/categories/Test/"/>
     
     
-    <category term="NDT" scheme="http://example.com/tags/NDT/"/>
+    <category term="NDT" scheme="https://favor1412.github.io/tags/NDT/"/>
     
-    <category term="Radiographic Testing" scheme="http://example.com/tags/Radiographic-Testing/"/>
+    <category term="Radiographic Testing" scheme="https://favor1412.github.io/tags/Radiographic-Testing/"/>
     
-    <category term="Defect Evaluation" scheme="http://example.com/tags/Defect-Evaluation/"/>
+    <category term="Defect Evaluation" scheme="https://favor1412.github.io/tags/Defect-Evaluation/"/>
     
   </entry>
   

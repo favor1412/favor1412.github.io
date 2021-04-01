@@ -6,7 +6,7 @@
   <link href="https://favor1412.github.io/atom.xml" rel="self"/>
   
   <link href="https://favor1412.github.io/"/>
-  <updated>2021-03-30T06:52:51.859Z</updated>
+  <updated>2021-03-30T07:31:54.547Z</updated>
   <id>https://favor1412.github.io/</id>
   
   <author>
@@ -17,23 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Java基础学习笔记之二 - 面向对象编程的基本特征</title>
     <link href="https://favor1412.github.io/2021/03/30/java-ji-chu-xue-xi-bi-ji-er-mian-xiang-dui-xiang-bian-cheng-de-ji-ben-te-zheng/"/>
     <id>https://favor1412.github.io/2021/03/30/java-ji-chu-xue-xi-bi-ji-er-mian-xiang-dui-xiang-bian-cheng-de-ji-ben-te-zheng/</id>
-    <published>2021-03-30T06:00:10.779Z</published>
-    <updated>2021-03-30T06:52:51.859Z</updated>
+    <published>2021-03-30T06:49:43.000Z</published>
+    <updated>2021-03-30T07:31:54.547Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;title: Java基础学习笔记(二) - 面向对象编程的基本特征&lt;br&gt;date: 2021-03-30 14:49:43&lt;br&gt;author: Favor Chen&lt;br&gt;cover: true&lt;br&gt;img:&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;Java基础学习笔记之二-面向对象编程的基本特征&quot;&gt;&lt;a href=&quot;#Java基础学习笔记之二-面向对象编程的基本特征&quot; class=&quot;headerlink&quot; title=&quot;Java基础学习笔记之二 -</summary>
         
       
     
     
     
+    <category term="Develop" scheme="https://favor1412.github.io/categories/Develop/"/>
+    
+    
+    <category term="Program" scheme="https://favor1412.github.io/tags/Program/"/>
+    
+    <category term="Java" scheme="https://favor1412.github.io/tags/Java/"/>
+    
+    <category term="OOP" scheme="https://favor1412.github.io/tags/OOP/"/>
     
   </entry>
   

@@ -584,7 +584,7 @@ mjx-container[display="true"] + br {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-30
+                    2021-04-01
                 </div>
                 
 
@@ -700,7 +700,12 @@ mjx-container[display="true"] + br {
 </li>
 <li><p>匿名内部类</p>
 <p>将返回值的生成与表示这个返回值的类的定义相结合的局部内部类，被称为匿名内部类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> InterfaceName(){</span><br><span class="line"><span class="comment">// Anonymous Inner Class Definition  </span></span><br><span class="line">};</span><br><span class="line"><span class="keyword">new</span> OuterClassName(){</span><br><span class="line">  <span class="comment">// Anonymous Inner Class Definition</span></span><br><span class="line">};</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">new</span> <span class="token class-name">InterfaceName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token comment">// Anonymous Inner Class Definition  </span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">OuterClassName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">// Anonymous Inner Class Definition</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>匿名内部类只能继承类或实现单一接口（两者取其一），没有构造器（但可通过实例初始化（代码块）来实现构造器功能），其中的方法也不能是抽象方法。因此，匿名内部类不适合于需要使用或重载构造器，或需要该类的多个对象的场合（可使用局部内部类）。</p>
 </li>
@@ -709,7 +714,16 @@ mjx-container[display="true"] + br {
 </li>
 </ul>
 <h4 id="内部类的继承和覆盖"><a href="#内部类的继承和覆盖" class="headerlink" title="内部类的继承和覆盖"></a>内部类的继承和覆盖</h4><p>在继承内部类时，其构造函数必须以外部类的对象为参数，并通过该对象调用内部类的构造函数，如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClassName</span></span>{</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">InnerClassName</span></span>{}</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InheritClassName</span> <span class="keyword">extends</span> <span class="title">OuterClassName</span>.<span class="title">InnerClassName</span></span>{</span><br><span class="line">    InheritClassName(OuterClassName out){</span><br><span class="line">        out.<span class="keyword">super</span>();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">OuterClassName</span><span class="token punctuation">{</span>
+    <span class="token keyword">class</span> <span class="token class-name">InnerClassName</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">InheritClassName</span> <span class="token keyword">extends</span> <span class="token class-name">OuterClassName</span><span class="token punctuation">.</span><span class="token class-name">InnerClassName</span><span class="token punctuation">{</span>
+    <span class="token class-name">InheritClassName</span><span class="token punctuation">(</span><span class="token class-name">OuterClassName</span> out<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        out<span class="token punctuation">.</span><span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>在继承外部类时，若自身的内部类与父类的内部类同名时，并不能覆盖。两者位于不同的命名空间。</p>
 
                 

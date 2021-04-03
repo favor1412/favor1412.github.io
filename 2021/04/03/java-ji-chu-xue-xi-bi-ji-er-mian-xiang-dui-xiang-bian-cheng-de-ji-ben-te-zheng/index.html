@@ -577,14 +577,14 @@ mjx-container[display="true"] + br {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-30
+                    2021-04-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-02
+                    2021-04-03
                 </div>
                 
 
@@ -598,7 +598,7 @@ mjx-container[display="true"] + br {
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
 
@@ -621,10 +621,10 @@ mjx-container[display="true"] + br {
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Java基础学习笔记之二-面向对象编程的基本特征"><a href="#Java基础学习笔记之二-面向对象编程的基本特征" class="headerlink" title="Java基础学习笔记之二 - 面向对象编程的基本特征"></a>Java基础学习笔记之二 - 面向对象编程的基本特征</h2><blockquote>
-<p>根据在<a target="_blank" rel="noopener" href="https://github.com/">Github</a>上的开源项目<a target="_blank" rel="noopener" href="https://github.com/LingCoder/OnJava8">《On Java 8》中文版</a>的相关内容编制而成，原书作者为[美] <em>Bruce Eckel</em> ，即《Java编程思想》的作者。</p>
+                <h2 id="Java基础学习笔记-二-面向对象编程的基本特征"><a href="#Java基础学习笔记-二-面向对象编程的基本特征" class="headerlink" title="Java基础学习笔记(二) - 面向对象编程的基本特征"></a>Java基础学习笔记(二) - 面向对象编程的基本特征</h2><blockquote>
+<p>根据在<a target="_blank" rel="noopener" href="https://github.com/">Github</a>上的开源项目<a target="_blank" rel="noopener" href="https://github.com/LingCoder/OnJava8">《On Java 8》中文版</a>的第七章至第十一章的部分内容编制而成，原书作者为[美] <em>Bruce Eckel</em> ，即《Java编程思想》的作者。</p>
 </blockquote>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>Java通过访问修饰符<em>（access specifier）</em>来限制类、成员和方法的访问控制权限，并将此分为<code>public</code>，<code>protected</code>，<em>包访问权限（package access，无修饰符）</em>和<code>private</code>，如下所示：</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>Java通过访问修饰符<em>（access specifier）</em>来限制类、成员变量和方法的访问控制权限，并将此分为<code>public</code>，<code>protected</code>，<em>包访问权限（package access，无修饰符）</em>和<code>private</code>，如下所示：</p>
 <table>
 <thead>
 <tr>
@@ -664,17 +664,17 @@ mjx-container[display="true"] + br {
 <td align="center"></td>
 </tr>
 </tbody></table>
-<p>其中，普通的类只能用<code>public</code> 或<em>（无）</em>进行修饰，若想类仅为自己或子类所用，可以用<code>private</code>或<code>protected</code>修饰构造器的方式来达到此目的。</p>
-<p>类的集合称之为包，其被组织在一个单独的命名空间（<em>namespace</em>）下，并用<code>package</code>声明和<code>import</code>导入（可采用通配符<code>*</code>可以导入整个包 ）。注意：当采用<code>import static</code>导入包时，在调用其包含的类的静态成员和方法可以不通过包名而直接使用。一个Java源代码文件称为一个编译单元（<em>compilation unit</em>），其可以包含一个或多个类，但每个编译单元中只能有一个<code>public</code>类，且类名必须与文件名相同。</p>
+<p>其中，普通的类只能用<code>public</code> 或<em>（无）</em>进行修饰，若想类仅为自己或子类所用，可以用<code>private</code>或<code>protected</code>修饰其构造器的方式来达到此目的。</p>
+<p>类的集合称之为包，其被组织在一个单独的命名空间（<em>namespace</em>）下，并用<code>package</code>声明和<code>import</code>导入，注意：可采用通配符<code>*</code>可以导入整个包 ，当采用<code>import static</code>导入包时，在调用其包含的类的静态成员和方法可以不通过包名而直接使用。一个Java源代码文件称为一个编译单元（<em>compilation unit</em>），其可以包含一个或多个类，但每个编译单元中只能有一个<code>public</code>类，且类名必须与文件名相同。</p>
 <h3 id="复用"><a href="#复用" class="headerlink" title="复用"></a>复用</h3><p>Java通过组合、继承和委托实现代码复用，如下：</p>
 <ul>
-<li>组合：将已有类的对象作为新类的成员即为组合；组合的初始化方式包括：1）在对象定义时或在新类构造器中赋值进行初始化；2）在对象使用前判断其值是否未<code>null</code>，继而赋值进行初始化；3）在代码块中（静态、非静态）进行初始化。</li>
-<li>继承：语法为<code>accessspecifier class SubTypeName extends SuperTypeName{}</code>；继承的特性包括：1）仅支持单继承；2）继承时将调用父类构造器，当父类构造器带参数时，子类将不会自动创建无参构造器而必须使用<code>super(args)</code>调用相应的父类构造器；3）使用<code>super.fields</code>或<code>super.methods</code>可以调用父类成员或方法，当子类方法与父类方法重名（未构成重写）时，可以通过参数列表的不同自动判断是父类方法还是子类方法；4）子类是父类的一种类型，子类对象可以作为父类对象直接使用（即向上转型）。</li>
+<li>组合：将已有类的对象作为新类的成员；组合的初始化方式包括：1）在对象定义时或在新类构造器中赋值进行初始化；2）在对象使用前判断其值是否为<code>null</code>，继而赋值进行初始化；3）在代码块中（静态、非静态）进行初始化。</li>
+<li>继承：语法为<code>accessspecifier class SubTypeName extends SuperTypeName{}</code>；继承的特性包括：1）仅支持单继承；2）继承时将调用父类构造器，当父类构造器带参数时，子类将不会自动创建无参构造器（即，隐式的调用<code>super()</code>）而必须使用<code>super(args)</code>调用相应的父类构造器；3）当子类方法与父类方法重名（但参数列表不同，不构成重写）可以通过参数列表自动判断是父类方法还是子类方法，当需要明确调用父类成员变量和方法时，可以使用<code>super</code>；4）子类是父类的一种类型，子类对象可以作为父类对象而直接使用（即向上转型）。</li>
 <li>委托：Java不直接支持委托，但可以借助组合以实现，即将需要委托的类声明为私有成员，并通过公开的方法调用所需要的私有成员的部分或全部方法。</li>
 </ul>
 <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>Java利用“向上转型”的特性可实现多态，即将子类对象的引用赋值予父类对象，此时调用父类方法将实现对应子类（重写）方法。Java中多态的实现源于方法的“后期绑定”。使用多态时应注意：1）多态针对方法，成员不构成多态；2）<code>private</code>，<code>static</code>，<code>final</code>方法均不构成多态；3）父类构造器内部存在子类重写的方法时，创建子类对象将调用父类构造器并执行子类重写的方法。</p>
 <h3 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h3><p>用<code>abstract</code>修饰的类称为抽象类，其可包含一个或多个抽象方法（即用<code>abstract</code>修饰的方法，其只有声明，但没有方法体），也可不包含抽象方法。抽象类不能用<code>new</code>来创建对象，但可以被继承，其子类若没有实现父类的所有抽象方法，则其仍为抽象类，不能用<code>new</code>来创建对象。</p>
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口用<code>interface</code>创建，用<code>implements</code>实现，其仅可包含：</p>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口可以看作是一种特殊的抽象类，用<code>interface</code>创建，用<code>implements</code>实现，其仅可包含：</p>
 <ul>
 <li><p>隐式的<code>public</code> <code>abstract</code>修饰的<strong>抽象方法</strong>；</p>
 </li>
@@ -751,7 +751,7 @@ mjx-container[display="true"] + br {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://favor1412.github.io/2021/03/30/java-ji-chu-xue-xi-bi-ji-er-mian-xiang-dui-xiang-bian-cheng-de-ji-ben-te-zheng/">https://favor1412.github.io/2021/03/30/java-ji-chu-xue-xi-bi-ji-er-mian-xiang-dui-xiang-bian-cheng-de-ji-ben-te-zheng/</a>
+                    <a href="https://favor1412.github.io/2021/04/03/java-ji-chu-xue-xi-bi-ji-er-mian-xiang-dui-xiang-bian-cheng-de-ji-ben-te-zheng/">https://favor1412.github.io/2021/04/03/java-ji-chu-xue-xi-bi-ji-er-mian-xiang-dui-xiang-bian-cheng-de-ji-ben-te-zheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -844,16 +844,17 @@ mjx-container[display="true"] + br {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/02/java-ji-chu-xue-xi-bi-ji-yi-ji-chu-zhi-shi/">
+                <a href="/2021/04/03/java-ji-chu-xue-xi-bi-ji-er-mian-xiang-dui-xiang-bian-cheng-de-ji-ben-te-zheng/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/favor1412/Pictures/main/markdown_pic/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0TITLE-20210402010248.jpg" class="responsive-img" alt="Java基础学习笔记之一 - 基础知识">
+                        <img src="https://raw.githubusercontent.com/favor1412/Pictures/main/markdown_pic/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0TITEL-20210330144659.jpg" class="responsive-img" alt="Java基础学习笔记之二 - 面向对象编程的基本特征">
                         
-                        <span class="card-title">Java基础学习笔记之一 - 基础知识</span>
+                        <span class="card-title">Java基础学习笔记之二 - 面向对象编程的基本特征</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -863,9 +864,9 @@ mjx-container[display="true"] + br {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -878,6 +879,7 @@ mjx-container[display="true"] + br {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -904,30 +906,30 @@ mjx-container[display="true"] + br {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/12/23/lu-mei-xin-ji-qi-he-jin-zhu-jian-ti-ji-xing-que-xian-de-mian-kong-xi-lu-ping-gu/">
+                <a href="/2021/04/03/java-ji-chu-xue-xi-bi-ji-yi-ji-chu-zhi-shi/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/favor1412/Pictures/main/markdown_pic/%E9%93%9D%E3%80%81%E9%95%81%E3%80%81%E9%94%8C%E5%8F%8A%E5%85%B6%E5%90%88%E9%87%91%E9%93%B8%E4%BB%B6%E4%BD%93%E7%A7%AF%E5%9E%8B%E7%BC%BA%E9%99%B7%E7%9A%84%E9%9D%A2%E5%AD%94%E9%9A%99%E7%8E%87%E8%AF%84%E4%BC%B0TITLE-20201225031145.jpg" class="responsive-img" alt="铝、镁、锌及其合金铸件体积型缺陷的面孔隙率评估">
+                        <img src="https://raw.githubusercontent.com/favor1412/Pictures/main/markdown_pic/Java%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0TITLE-20210402010248.jpg" class="responsive-img" alt="Java基础学习笔记之一 - 基础知识">
                         
-                        <span class="card-title">铝、镁、锌及其合金铸件体积型缺陷的面孔隙率评估</span>
+                        <span class="card-title">Java基础学习笔记之一 - 基础知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            根据VDG/P202-2010[Volume Deficits of Castings Made from Aluminium，Magnesium，and Zinc Casting Alloys]编制, 适用于铝、镁、锌铸造合金内部和表面的体积型缺陷的面孔隙程度的评估。
+                            根据在Github上的开源项目《On Java 8》中文版的相关内容编制而成，原书作者为[美]Bruce Eckel，即《Java编程思想》的作者。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Test/" class="post-category">
-                                    Test
+                            <a href="/categories/Develop/" class="post-category">
+                                    Develop
                                 </a>
                             
                             
@@ -937,16 +939,16 @@ mjx-container[display="true"] + br {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/NDT/">
-                        <span class="chip bg-color">NDT</span>
+                    <a href="/tags/Program/">
+                        <span class="chip bg-color">Program</span>
                     </a>
                     
-                    <a href="/tags/Radiographic-Testing/">
-                        <span class="chip bg-color">Radiographic Testing</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Defect-Evaluation/">
-                        <span class="chip bg-color">Defect Evaluation</span>
+                    <a href="/tags/OOP/">
+                        <span class="chip bg-color">OOP</span>
                     </a>
                     
                 </div>

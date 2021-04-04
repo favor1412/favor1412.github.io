@@ -584,14 +584,14 @@ mjx-container[display="true"] + br {
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-03
+                    2021-04-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    2.7k
                 </div>
                 
 
@@ -624,7 +624,7 @@ mjx-container[display="true"] + br {
                 <h2 id="Java基础学习笔记-一-基础知识"><a href="#Java基础学习笔记-一-基础知识" class="headerlink" title="Java基础学习笔记(一) - 基础知识"></a>Java基础学习笔记(一) - 基础知识</h2><blockquote>
 <p>根据在<a target="_blank" rel="noopener" href="https://github.com/">Github</a>上的开源项目<a target="_blank" rel="noopener" href="https://github.com/LingCoder/OnJava8">《On Java 8》中文版</a>的第三章至第六章的部分内容编制而成，原书作者为[美] <em>Bruce Eckel</em> ，即《Java编程思想》的作者。</p>
 </blockquote>
-<h3 id="类和对象的创建"><a href="#类和对象的创建" class="headerlink" title="类和对象的创建"></a>类和对象的创建</h3><p>在Java中万物皆对象，我们可以通过“引用”来操纵对象，对象与引用均可以单独存在。在Java中所做全部工作就是“定义类”，“产生对象”，并“发送消息给对象”，使其完成所需功能。类和对象的创建如下：</p>
+<h3 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h3><p>在Java中万物皆对象，我们可以通过“引用”来操纵对象，对象与引用均可以单独存在。在Java中所做全部工作就是“定义类”，“产生对象”，并“发送消息给对象”，使其完成所需功能。类和对象的创建如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">accessspecifier <span class="token keyword">class</span> <span class="token class-name">ATypeName</span><span class="token punctuation">{</span>
     <span class="token comment">// Class Body including Fields and Methods.</span>
 <span class="token punctuation">}</span> 
@@ -700,7 +700,7 @@ mjx-container[display="true"] + br {
 <td align="center">Void</td>
 </tr>
 </tbody></table>
-<p>不同类型之间可以相互转换，对于基本类型在赋值时可以隐式的向更大范围类型进行自动转换，也可显示的使用<code>(ClassType)</code>进行手动转换；对于通用对象可以向上转换为父类对象。Java的变量（包括成员变量、临时变量）的作用域通过<code>{}</code>限制，且镶套无效，采用<code>static{}</code>的方式可以定义静态代码块。</p>
+<p>不同类型之间可以相互转换，对于基本类型在赋值时可以隐式的向更大范围类型进行自动转换，也可显式的使用<code>(ClassType)</code>进行手动转换；对于通用对象可以向上转换为父类对象。Java的变量（包括成员变量、临时变量）的作用域通过<code>{}</code>限制，且镶套无效，采用<code>static{}</code>的方式可以定义静态代码块。</p>
 <p>方法<code>Methods</code>只能在类中进行定义，如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">accessspecifier <span class="token class-name">ReturnType</span> methodName（<span class="token comment">/* Argument List */</span>）<span class="token punctuation">{</span>  
     <span class="token comment">// The methodName and Argument List are called the signature of the method.</span>
@@ -722,19 +722,17 @@ mjx-container[display="true"] + br {
 </ul>
 <h3 id="对象的清理"><a href="#对象的清理" class="headerlink" title="对象的清理"></a>对象的清理</h3><p>Java拥有垃圾回收器用以清理无用对象占据的内存资源（由<code>new</code>分配），但并不适用于其它“特殊”方式占据内存资源的释放，用户可借助<code>finalize()</code>方法在垃圾回收时刻做一些重要的清理工作。注意：Java的垃圾回收只与内存使用情况相关。</p>
 <ul>
-<li><code>finalize()</code></li>
-</ul>
+<li><p><code>finalize()</code></p>
 <p><code>finalize()</code>是<code>Object</code>的<code>protected</code>方法，子类可以覆盖以实现资源清理工作，GC在回收对象之前调用该方法。<code>finalize() </code>的调用具有不确定性，且最多被GC执行一次（不包括用户手动调用的情况），不建议用于“非内存资源”的清理。</p>
-<ul>
-<li>对象回收过程</li>
-</ul>
+</li>
+<li><p>对象回收过程</p>
 <p>对象回收为两次标记：第一次标记发生在对象不可达时，筛选是否进入F-Queue队列（即是否有必要执行<code>finalize() </code>方法，执行条件为：已重写<code>finalize()</code>方法，且并未被虚拟机调用）；进入F-Queue队列的对象将由虚拟机自动创建低优先级的线程去执行这个对象的<code>finalize() </code>方法，但不保证一定会执行结束；未进入F-Queue队列的对象将被直接回收。第二次标记为完成第一次标记且执行完<code>finalize() </code>方法后对象仍不可达时进行回收，此时，对象唯一不被清理的机会是，利用<code>finalize() </code>方法与任意对象建立联系。</p>
-<ul>
-<li><code>System.gc()</code></li>
-</ul>
+</li>
+<li><p><code>System.gc()</code></p>
 <p><code>System.gc() </code>为强制进行垃圾回收方法，可增加执行<code>finalize() </code>方法的机会。</p>
-<ul>
-<li>需手动执行特殊清理任务时，应注意其清理的顺序应与初始化的顺序相反。</li>
+</li>
+<li><p>需手动执行特殊清理任务时，应注意其清理的顺序应与初始化的顺序相反。</p>
+</li>
 </ul>
 <h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>对于常量可以通过在数值上增加前缀、后缀或以指数形式以区分不同的常量类型或使用<code>_</code>进行分隔位数较多的数值，使其显示更为清晰，如下：</p>
 <table>
@@ -761,6 +759,16 @@ mjx-container[display="true"] + br {
 <td>必须遵循以下原则：1）仅限于单下划线，不能多条相连；2）不能在数值的开头和结尾使用；3）不能在<code>L</code>、<code>F</code>、<code>D</code>之后使用；4）不能在二进制<code>b</code>和十六进制<code>x</code>的前后使用。</td>
 </tr>
 </tbody></table>
+<h3 id="数组与枚举的初始化"><a href="#数组与枚举的初始化" class="headerlink" title="数组与枚举的初始化"></a>数组与枚举的初始化</h3><ul>
+<li><p>数组：用同一标识符封装的相同数据类型的集合，其定义方式为：<code>ATypeName[] arrayName</code>或<code>ATypeName arrayName[]</code>；定义时不能指定数组大小和分配空间，仅提供一个引用，其初始化方式如下：</p>
+<p>（1）利用<code>{}</code>直接赋值，即<code>arrayName = {value1,value2,...}</code>；</p>
+<p>（2）利用<code>new ATypeName(para)[i]</code>确定数组大小并分配空间；</p>
+<p>（3）对单个数组元素<code>arrayName[i]</code>进行赋值；</p>
+<p>（4）针对通用对象数组两种初始化方式，即<code>{value1,value2,...}</code> 或<code>new ATpyeName[]{value1,value2,...}</code>，其中，第二种方式可用于创建可变参数列表（即可采用 <code>ATypeName... Name</code>的形式）。</p>
+</li>
+<li><p>枚举：同同一标识符封装的整数常数的集合，其定义方式为：<code>修饰符 enum enumName{VALUE1,VALUE2,...}</code>。枚举的值用大写，可与switch语句连用效果极佳。</p>
+</li>
+</ul>
 <h3 id="命名风格"><a href="#命名风格" class="headerlink" title="命名风格"></a>命名风格</h3><ul>
 <li>包：域名反写，全部小写，例如：net.mindview.package；</li>
 <li>类：每个单词首字母均大写，其余小写，例如：ClassName；</li>
@@ -843,14 +851,18 @@ mjx-container[display="true"] + br {
 <p><code>label</code>：仅能置于循环之前，与<code>break</code>和<code>continue</code>配合使用；使用<code>break label</code>：中断并跳出标签所指的循环；使用<code>continue label</code>：中断并由标签所指循环重新进入。</p>
 </li>
 </ul>
-<h3 id="this，super，static，final关键字"><a href="#this，super，static，final关键字" class="headerlink" title="this，super，static，final关键字"></a><em>this</em>，<em>super</em>，<em>static</em>，<em>final</em>关键字</h3><ul>
+<h3 id="this，super，static，final-关键字"><a href="#this，super，static，final-关键字" class="headerlink" title="this，super，static，final 关键字"></a><em>this</em>，<em>super</em>，<em>static</em>，<em>final</em> 关键字</h3><ul>
 <li><p><code>this</code>表示调用方法的对象的引用，使用<code>this.fields</code>或<code>this.methods</code>可以调用相应对象的成员变量和方法，在构造器中第一行（只能在第一行）使用<code>this(args)</code>可以调用相应的构造器；</p>
 </li>
 <li><p><code>super</code>表示父类对象（隐式创建）的引用，使用<code>super.fields</code>或<code>super.methods</code>可以调用父类成员变量和方法，在子类构造器中第一行（只能在第一行）使用<code>super(args)</code>可以调用相应的父类构造器；</p>
 </li>
 <li><p><code>static</code>表示为静态元素，可以在没有对象的情况下使用，其可以修饰成员变量、方法、代码块和内部类；</p>
 </li>
-<li><p><code>final</code>意为不能修改，其可以修饰成员、方法、方法参数和类。修饰成员变量表示其值（在对象周期内）不能改变（必须在定义时或构造器内进行赋值，多个构造器时，每个构造器均需要赋值）；若成员变量为基本类型，则表示存储值不能改变；若成员变量为引用类型，则表示其引用不能改变（但指向的对象本身可以改变）。修饰方法表示子类不能对其进行重写（但自身和子类均可以重载），其中，<code>private</code>隐式的使用了<code>final</code>。修饰方法参数表示该方法中不能有任何改变该参数值的语句。修饰类表示该类不能被继承，对于<code>final</code>修饰的类，其未加<code>final</code>修饰的成员变量可以改变，但其方法无论是否加<code>final</code>修饰，均不能被重写。</p>
+<li><p><code>final</code>意为不能修改，其可以修饰成员、方法、方法参数和类。</p>
+<p>（1）修饰成员变量：表示其值（在对象周期内）不能改变（必须在定义时或构造器内进行赋值，多个构造器时，每个构造器均需要赋值）；若成员变量为基本类型，则表示存储值不能改变；若成员变量为引用类型，则表示其引用不能改变（但指向的对象本身可以改变）。</p>
+<p>（2）修饰方法：表示子类不能对其进行重写（但自身和子类均可以重载），其中，<code>private</code>隐式的使用了<code>final</code>。</p>
+<p>（3）修饰方法参数：表示该方法中不能有任何改变该参数值的语句。</p>
+<p>（4）修饰类表示该类不能被继承，对于<code>final</code>修饰的类，其未加<code>final</code>修饰的成员变量可以改变，但其方法无论是否加<code>final</code>修饰，均不能被重写。</p>
 </li>
 </ul>
 
@@ -1284,7 +1296,7 @@ mjx-container[display="true"] + br {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.1k</span>&nbsp;字
+                class="white-color">8.3k</span>&nbsp;字
             
             
             
